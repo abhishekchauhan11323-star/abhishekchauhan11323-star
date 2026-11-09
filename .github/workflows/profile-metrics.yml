@@ -1,0 +1,23 @@
+name: "Profile Metrics & Activity Sync"
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Daily at midnight
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Verify Architecture Links & Asset Health
+        run: |
+          echo "Verifying SVG assets and architecture paths..."
+          test -f assets/banner-3d.svg
+          test -f assets/azure-landing-zone-3d.svg
+          echo "All 3D assets verified successfully."

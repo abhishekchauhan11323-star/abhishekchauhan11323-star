@@ -1,0 +1,21 @@
+prefix              = "ent-lz"
+environment         = "prod"
+primary_location    = "eastus"
+secondary_location  = "centralus"
+
+hub_address_space            = ["10.0.0.0/16"]
+spoke_workload_address_space = ["10.1.0.0/16"]
+spoke_data_address_space     = ["10.2.0.0/16"]
+
+monthly_budget_amount = 5000
+admin_email           = "abhishekchauhan@example.com"
+
+mandatory_tags = {
+  Environment      = "Production"
+  Owner            = "Abhishek Chauhan"
+  ArchitectureTier = "Enterprise-Zero-Trust-Landing-Zone"
+  Compliance       = "CIS-Azure-Foundations-v2.0"
+  CostCenter       = "Cloud-Engineering-770"
+  DisasterRecovery = "Multi-Region-ASR-15m"
+  ManagedBy        = "Terraform"
+}

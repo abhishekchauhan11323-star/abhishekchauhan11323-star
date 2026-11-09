@@ -1,0 +1,325 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="lzBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050a18" />
+      <stop offset="40%" stop-color="#0a1329" />
+      <stop offset="100%" stop-color="#02040a" />
+    </linearGradient>
+
+    <!-- Glowing Lines -->
+    <linearGradient id="laserCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+    <linearGradient id="laserPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d946ef" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="laserAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <linearGradient id="laserGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Isometric Plate Gradients -->
+    <linearGradient id="isoHubTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="isoSpokeTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#064e3b" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="isoSecTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b0764" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="isoDrTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#451a03" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="laserGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="heavyGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .node-title { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 13px; font-weight: 800; fill: #ffffff; letter-spacing: 0.8px; }
+    .node-desc { font-family: 'Fira Code', monospace; font-size: 10px; font-weight: 500; fill: #94a3b8; }
+    .node-badge { font-family: 'Fira Code', monospace; font-size: 9.5px; font-weight: 700; fill: #38bdf8; }
+    .section-header { font-family: 'Segoe UI', system-ui, sans-serif; font-size: 18px; font-weight: 900; letter-spacing: 2px; }
+  </style>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="900" rx="16" fill="url(#lzBg)" />
+
+  <!-- Grid mesh background -->
+  <g opacity="0.15">
+    <path d="M 0,150 L 1200,150 M 0,300 L 1200,300 M 0,450 L 1200,450 M 0,600 L 1200,600 M 0,750 L 1200,750" stroke="#00f2fe" stroke-width="0.8" stroke-dasharray="6,6" />
+    <path d="M 200,0 L 200,900 M 400,0 L 400,900 M 600,0 L 600,900 M 800,0 L 800,900 M 1000,0 L 1000,900" stroke="#00f2fe" stroke-width="0.8" stroke-dasharray="6,6" />
+  </g>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(60, 40)">
+    <text x="0" y="0" class="section-header" fill="#38bdf8">3D ENTERPRISE AZURE LANDING ZONE ARCHITECTURE</text>
+    <text x="0" y="24" font-family="'Fira Code', monospace" font-size="12" fill="#94a3b8">
+      Zero-Trust Core • Hub-and-Spoke IDPS • Multi-Region BCDR (15m RPO) • CIS v2.0 &amp; FinOps Governance
+    </text>
+    <line x1="0" y1="36" x2="1080" y2="36" stroke="#1e293b" stroke-width="2" />
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 1. HUB-AND-SPOKE NETWORKING TIER (ISOMETRIC 3D) -->
+  <!-- ========================================== -->
+  <g transform="translate(60, 110)">
+    <!-- Base Plate Hub -->
+    <path d="M 270,10 L 530,90 L 270,170 L 10,90 Z" fill="url(#isoHubTop)" stroke="#38bdf8" stroke-width="2" filter="url(#laserGlow)" />
+    <!-- Plate thickness/depth -->
+    <path d="M 10,90 L 270,170 L 270,185 L 10,105 Z" fill="#0c4a6e" />
+    <path d="M 270,170 L 530,90 L 530,105 L 270,185 Z" fill="#082f49" />
+
+    <!-- Hub Header -->
+    <text x="270" y="45" text-anchor="middle" class="node-title" fill="#38bdf8">🌐 HUB NETWORK CORE (10.0.0.0/16)</text>
+    <text x="270" y="65" text-anchor="middle" class="node-desc" fill="#e0f2fe">Azure Firewall Premium (IDPS Enabled)</text>
+
+    <!-- Components Inside Hub -->
+    <!-- Component 1: Azure Firewall -->
+    <g transform="translate(90, 80)">
+      <rect width="105" height="50" rx="8" fill="#0f172a" stroke="#ef4444" stroke-width="1.5" />
+      <text x="52" y="22" text-anchor="middle" class="node-title" font-size="11">🔥 Azure FW</text>
+      <text x="52" y="38" text-anchor="middle" class="node-badge" fill="#f87171">IDPS + TLS 1.3</text>
+    </g>
+
+    <!-- Component 2: Azure Bastion -->
+    <g transform="translate(215, 80)">
+      <rect width="110" height="50" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5" />
+      <text x="55" y="22" text-anchor="middle" class="node-title" font-size="11">🛡️ Bastion</text>
+      <text x="55" y="38" text-anchor="middle" class="node-badge" fill="#22d3ee">Zero Public IP</text>
+    </g>
+
+    <!-- Component 3: Private DNS -->
+    <g transform="translate(345, 80)">
+      <rect width="115" height="50" rx="8" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5" />
+      <text x="57" y="22" text-anchor="middle" class="node-title" font-size="11">🔍 Private DNS</text>
+      <text x="57" y="38" text-anchor="middle" class="node-badge" fill="#60a5fa">privatelink.azure</text>
+    </g>
+  </g>
+
+  <!-- UDR 0.0.0.0/0 Route Tunneling Beam (Glowing Cyan) -->
+  <g transform="translate(60, 110)">
+    <!-- Connection lines with animated pulse look -->
+    <path d="M 270,185 L 270,250 L 140,290" stroke="#00f2fe" stroke-width="2.5" stroke-dasharray="6,4" fill="none" filter="url(#laserGlow)" />
+    <path d="M 270,185 L 270,250 L 400,290" stroke="#00f2fe" stroke-width="2.5" stroke-dasharray="6,4" fill="none" filter="url(#laserGlow)" />
+    <!-- UDR Badge in center -->
+    <rect x="200" y="220" width="140" height="24" rx="6" fill="#082f49" stroke="#38bdf8" stroke-width="1.2" />
+    <text x="270" y="236" text-anchor="middle" font-family="'Fira Code', monospace" font-size="10" font-weight="700" fill="#38bdf8">UDR 0.0.0.0/0 TUNNEL</text>
+  </g>
+
+  <!-- Spoke 1 Plate: Workload (10.1.0.0/16) -->
+  <g transform="translate(60, 395)">
+    <path d="M 140,10 L 260,50 L 140,90 L 20,50 Z" fill="url(#isoSpokeTop)" stroke="#10b981" stroke-width="1.8" />
+    <path d="M 20,50 L 140,90 L 140,100 L 20,60 Z" fill="#064e3b" />
+    <path d="M 140,90 L 260,50 L 260,60 L 140,100 Z" fill="#022c22" />
+    <text x="140" y="42" text-anchor="middle" class="node-title" font-size="11" fill="#34d399">📦 SPOKE 01: AKS &amp; APPS</text>
+    <text x="140" y="58" text-anchor="middle" class="node-desc" fill="#a7f3d0">10.1.0.0/16 | NSG Enforced</text>
+    <text x="140" y="74" text-anchor="middle" class="node-badge" fill="#6ee7b7">Private Endpoints Only</text>
+  </g>
+
+  <!-- Spoke 2 Plate: Data & Storage (10.2.0.0/16) -->
+  <g transform="translate(320, 395)">
+    <path d="M 140,10 L 260,50 L 140,90 L 20,50 Z" fill="url(#isoSpokeTop)" stroke="#10b981" stroke-width="1.8" />
+    <path d="M 20,50 L 140,90 L 140,100 L 20,60 Z" fill="#064e3b" />
+    <path d="M 140,90 L 260,50 L 260,60 L 140,100 Z" fill="#022c22" />
+    <text x="140" y="42" text-anchor="middle" class="node-title" font-size="11" fill="#34d399">💾 SPOKE 02: DATA TIER</text>
+    <text x="140" y="58" text-anchor="middle" class="node-desc" fill="#a7f3d0">10.2.0.0/16 | CMK Encrypted</text>
+    <text x="140" y="74" text-anchor="middle" class="node-badge" fill="#6ee7b7">RA-GRS Replication</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 2. ZERO-TRUST SECURITY CORE (ISOMETRIC 3D) -->
+  <!-- ========================================== -->
+  <g transform="translate(630, 110)">
+    <!-- Base Plate Security -->
+    <path d="M 250,10 L 490,90 L 250,170 L 10,90 Z" fill="url(#isoSecTop)" stroke="#a855f7" stroke-width="2" filter="url(#laserGlow)" />
+    <path d="M 10,90 L 250,170 L 250,185 L 10,105 Z" fill="#581c87" />
+    <path d="M 250,170 L 490,90 L 490,105 L 250,185 Z" fill="#3b0764" />
+
+    <text x="250" y="45" text-anchor="middle" class="node-title" fill="#c084fc">🔒 ZERO-TRUST SECURITY POSTURE</text>
+    <text x="250" y="65" text-anchor="middle" class="node-desc" fill="#f3e8ff">Continuous Verification &amp; Least Privilege RBAC</text>
+
+    <!-- Components Inside Security -->
+    <!-- Key Vault RBAC + Purge Protection -->
+    <g transform="translate(45, 80)">
+      <rect width="125" height="50" rx="8" fill="#1e1035" stroke="#c084fc" stroke-width="1.5" />
+      <text x="62" y="22" text-anchor="middle" class="node-title" font-size="11">🔐 Key Vault</text>
+      <text x="62" y="38" text-anchor="middle" class="node-badge" fill="#e9d5ff">Purge Protect + RBAC</text>
+    </g>
+
+    <!-- CMK 4096-bit Disk Encryption -->
+    <g transform="translate(185, 80)">
+      <rect width="130" height="50" rx="8" fill="#1e1035" stroke="#a855f7" stroke-width="1.5" />
+      <text x="65" y="22" text-anchor="middle" class="node-title" font-size="11">💿 CMK 4096-Bit</text>
+      <text x="65" y="38" text-anchor="middle" class="node-badge" fill="#e9d5ff">Hardware HSM Disk</text>
+    </g>
+
+    <!-- Sentinel & Defender -->
+    <g transform="translate(330, 80)">
+      <rect width="130" height="50" rx="8" fill="#1e1035" stroke="#e879f9" stroke-width="1.5" />
+      <text x="65" y="22" text-anchor="middle" class="node-title" font-size="11">👁️ Sentinel SIEM</text>
+      <text x="65" y="38" text-anchor="middle" class="node-badge" fill="#f5d0fe">Defender for Cloud</text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 3. DISASTER RECOVERY (BCDR) 15m RPO TIER -->
+  <!-- ========================================== -->
+  <g transform="translate(630, 330)">
+    <rect width="490" height="175" rx="14" fill="#14111f" stroke="#f59e0b" stroke-width="1.8" filter="url(#laserGlow)" />
+    <text x="25" y="30" class="node-title" fill="#fbbf24">⚡ DISASTER RECOVERY &amp; BCDR ARCHITECTURE</text>
+    <text x="25" y="48" class="node-desc" fill="#fde68a">Multi-Region Active/Passive Failover with Azure Site Recovery (ASR)</text>
+
+    <!-- East US Box -->
+    <g transform="translate(25, 65)">
+      <rect width="180" height="90" rx="8" fill="#1e1b2e" stroke="#3b82f6" stroke-width="1.5" />
+      <text x="90" y="25" text-anchor="middle" class="node-title" font-size="12" fill="#60a5fa">PRIMARY REGION</text>
+      <text x="90" y="44" text-anchor="middle" class="node-desc" fill="#93c5fd">Region: East US</text>
+      <text x="90" y="62" text-anchor="middle" class="node-badge" fill="#38bdf8">Active Production Workloads</text>
+      <text x="90" y="78" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" fill="#22c55e">● HEALTH: 100% HEALTHY</text>
+    </g>
+
+    <!-- Replication Laser Beam In Center -->
+    <g transform="translate(210, 95)">
+      <line x1="0" y1="15" x2="68" y2="15" stroke="#f59e0b" stroke-width="3" stroke-dasharray="4,4" filter="url(#laserGlow)" />
+      <polygon points="68,15 60,11 60,19" fill="#f59e0b" />
+      <rect x="5" y="-12" width="60" height="18" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="0.8" />
+      <text x="35" y="0" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" font-weight="700" fill="#fde047">ASR 15m RPO</text>
+      <text x="35" y="28" text-anchor="middle" font-family="'Fira Code', monospace" font-size="8.5" fill="#fcd34d">RA-GRS Sync</text>
+    </g>
+
+    <!-- Central US Box -->
+    <g transform="translate(285, 65)">
+      <rect width="180" height="90" rx="8" fill="#1e1b2e" stroke="#f59e0b" stroke-width="1.5" />
+      <text x="90" y="25" text-anchor="middle" class="node-title" font-size="12" fill="#fbbf24">DR REPLICA REGION</text>
+      <text x="90" y="44" text-anchor="middle" class="node-desc" fill="#fde68a">Region: Central US</text>
+      <text x="90" y="62" text-anchor="middle" class="node-badge" fill="#fcd34d">ASR Standby Replicas</text>
+      <text x="90" y="78" text-anchor="middle" font-family="'Fira Code', monospace" font-size="9" fill="#38bdf8">Traffic Manager Auto-Failover</text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 4. CONTINUOUS OBSERVABILITY TIER (90d LA) -->
+  <!-- ========================================== -->
+  <g transform="translate(60, 530)">
+    <rect width="520" height="160" rx="14" fill="#0d1b2a" stroke="#0ea5e9" stroke-width="1.8" />
+    <text x="25" y="30" class="node-title" fill="#38bdf8">📊 CONTINUOUS OBSERVABILITY &amp; METRICS</text>
+    <text x="25" y="48" class="node-desc">Unified Telemetry, KQL Log Ingestion &amp; Incident Routing</text>
+
+    <!-- Sub-grid cards -->
+    <g transform="translate(25, 65)">
+      <rect width="145" height="75" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+      <text x="72" y="24" text-anchor="middle" class="node-title" font-size="11">Central LA Workspace</text>
+      <text x="72" y="42" text-anchor="middle" class="node-badge" fill="#7dd3fc">90-Day Retention</text>
+      <text x="72" y="60" text-anchor="middle" class="node-desc" font-size="9">Dedicated Cluster Capable</text>
+    </g>
+
+    <g transform="translate(185, 65)">
+      <rect width="145" height="75" rx="8" fill="#1e293b" stroke="#0284c7" stroke-width="1" />
+      <text x="72" y="24" text-anchor="middle" class="node-title" font-size="11">Application Insights</text>
+      <text x="72" y="42" text-anchor="middle" class="node-badge" fill="#7dd3fc">Distributed Tracing</text>
+      <text x="72" y="60" text-anchor="middle" class="node-desc" font-size="9">Live Metrics &amp; APM</text>
+    </g>
+
+    <g transform="translate(345, 65)">
+      <rect width="150" height="75" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="1" />
+      <text x="75" y="24" text-anchor="middle" class="node-title" font-size="11">CloudOps Action Group</text>
+      <text x="75" y="42" text-anchor="middle" class="node-badge" fill="#22d3ee">PagerDuty / Webhook</text>
+      <text x="75" y="60" text-anchor="middle" class="node-desc" font-size="9">Dynamic Metric Alerts</text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 5. POLICY, GOVERNANCE & FINOPS TIER -->
+  <!-- ========================================== -->
+  <g transform="translate(630, 530)">
+    <rect width="490" height="160" rx="14" fill="#1a1423" stroke="#a855f7" stroke-width="1.8" />
+    <text x="25" y="30" class="node-title" fill="#d8b4fe">⚖️ GOVERNANCE, POLICY ENFORCEMENT &amp; FINOPS</text>
+    <text x="25" y="48" class="node-desc" fill="#e9d5ff">Automated Guardrails, Resource Locks &amp; Cost Control</text>
+
+    <!-- Sub-grid cards -->
+    <g transform="translate(25, 65)">
+      <rect width="135" height="75" rx="8" fill="#2d1b4e" stroke="#c084fc" stroke-width="1" />
+      <text x="67" y="24" text-anchor="middle" class="node-title" font-size="11">CIS v2.0 Benchmark</text>
+      <text x="67" y="42" text-anchor="middle" class="node-badge" fill="#f0abfc">100% Policy Match</text>
+      <text x="67" y="60" text-anchor="middle" class="node-desc" font-size="9">Deny Public IPs</text>
+    </g>
+
+    <g transform="translate(175, 65)">
+      <rect width="135" height="75" rx="8" fill="#2d1b4e" stroke="#a855f7" stroke-width="1" />
+      <text x="67" y="24" text-anchor="middle" class="node-title" font-size="11">Management Groups</text>
+      <text x="67" y="42" text-anchor="middle" class="node-badge" fill="#d8b4fe">Hierarchy Tree</text>
+      <text x="67" y="60" text-anchor="middle" class="node-desc" font-size="9">Mandatory Tagging</text>
+    </g>
+
+    <g transform="translate(325, 65)">
+      <rect width="140" height="75" rx="8" fill="#2d1b4e" stroke="#8b5cf6" stroke-width="1" />
+      <text x="70" y="24" text-anchor="middle" class="node-title" font-size="11">FinOps &amp; Locks</text>
+      <text x="70" y="42" text-anchor="middle" class="node-badge" fill="#c4b5fd">CanNotDelete Lock</text>
+      <text x="70" y="60" text-anchor="middle" class="node-desc" font-size="9">Tiered Budget Alerts</text>
+    </g>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- 6. BACKUP GFS RETENTION ARCHITECTURE -->
+  <!-- ========================================== -->
+  <g transform="translate(60, 715)">
+    <rect width="1060" height="140" rx="14" fill="#0a192f" stroke="#10b981" stroke-width="2" />
+    <g transform="translate(30, 28)">
+      <text x="0" y="0" class="node-title" fill="#34d399">🛡️ RECOVERY SERVICES VAULT — ENTERPRISE GFS BACKUP RETENTION MATRIX</text>
+      <text x="0" y="18" font-family="'Fira Code', monospace" font-size="11" fill="#94a3b8">
+        Immutable Backups with Soft-Delete, MUA (Multi-User Authorization) &amp; Cross-Region Restore
+      </text>
+    </g>
+
+    <!-- 4 GFS Pillars -->
+    <g transform="translate(30, 60)">
+      <!-- Daily -->
+      <g transform="translate(0, 0)">
+        <rect width="230" height="60" rx="8" fill="#132e27" stroke="#059669" stroke-width="1.2" />
+        <text x="115" y="24" text-anchor="middle" class="node-title" font-size="12" fill="#6ee7b7">DAILY SNAPSHOTS</text>
+        <text x="115" y="44" text-anchor="middle" class="node-desc" fill="#a7f3d0">30-Day Retention | Instant RP</text>
+      </g>
+
+      <!-- Weekly -->
+      <g transform="translate(255, 0)">
+        <rect width="230" height="60" rx="8" fill="#132e27" stroke="#059669" stroke-width="1.2" />
+        <text x="115" y="24" text-anchor="middle" class="node-title" font-size="12" fill="#6ee7b7">WEEKLY BACKUP</text>
+        <text x="115" y="44" text-anchor="middle" class="node-desc" fill="#a7f3d0">12-Week Retention | Sunday 23:00</text>
+      </g>
+
+      <!-- Monthly -->
+      <g transform="translate(510, 0)">
+        <rect width="230" height="60" rx="8" fill="#132e27" stroke="#059669" stroke-width="1.2" />
+        <text x="115" y="24" text-anchor="middle" class="node-title" font-size="12" fill="#6ee7b7">MONTHLY BACKUP</text>
+        <text x="115" y="44" text-anchor="middle" class="node-desc" fill="#a7f3d0">60-Month Retention | 1st Sunday</text>
+      </g>
+
+      <!-- 5-Year Archive -->
+      <g transform="translate(765, 0)">
+        <rect width="235" height="60" rx="8" fill="#132e27" stroke="#10b981" stroke-width="1.5" />
+        <text x="117" y="24" text-anchor="middle" class="node-title" font-size="12" fill="#34d399">5-YEAR ARCHIVE</text>
+        <text x="117" y="44" text-anchor="middle" class="node-desc" fill="#6ee7b7">Cold / Archive Tier Storage</text>
+      </g>
+    </g>
+  </g>
+</svg>
